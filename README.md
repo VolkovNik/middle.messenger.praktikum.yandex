@@ -4,7 +4,7 @@
 
 Данный репозиторий хранит в себе учебный проект Яндекс.Практикума мессенджер
 - [Дизайн мессенджера](https://github.com/facebook/react)
-- [Ссылка на проект](https://github.com/facebook/react)
+- [Ссылка на проект](https://funny-frangollo-71f4a6.netlify.app/)
 
 ### Установка
 
@@ -16,10 +16,10 @@
 
 ### Ссылка на страницы проекта 
 
-- «[Страница авторизации](https://github.com/facebook/react)»,
-- «[Страница регистрации](https://github.com/labstack/echo)»,
-- «[Страница 404](https://github.com/webpack/webpack)»,
-- «[Страница 5**](https://github.com/taosdata/TDengine)»,
-- «[Страница настройки пользователя](https://github.com/vladpereskokov/soul-hunting/)».
-- «[Страница с чатами](https://github.com/vladpereskokov/soul-hunting/)».
+- «[Страница авторизации](https://funny-frangollo-71f4a6.netlify.app/pages/authorization/login/login)»,
+- «[Страница регистрации](https://funny-frangollo-71f4a6.netlify.app/pages/authorization/signup/signup)»,
+- «[Страница 404](https://funny-frangollo-71f4a6.netlify.app/pages/errors/404/404)»,
+- «[Страница 5**](https://funny-frangollo-71f4a6.netlify.app/pages/errors/error/error)»,
+- «[Страница настройки пользователя](https://funny-frangollo-71f4a6.netlify.app/pages/settings/settings)».
+- «[Страница с чатами](https://funny-frangollo-71f4a6.netlify.app/pages/chats/chats)».
 
