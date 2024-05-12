@@ -1,0 +1,17 @@
+{{#> main title="Авторизация" main_stylesheet="../../../css/main.scss" page_stylesheet="../authorization.scss" }}
+    <main>
+        <div class="authorization">
+            <h2 class="authorization__title">Вход</h2>
+            <form class="authorization__form">
+                <div class="form__inputs">
+                    {{> input id="authorization_input_login" placeholder="Логин" name="login" }}
+                    {{> input id="authorization_input_password" placeholder="Пароль" name="password" }}
+                </div>
+                <div class="form__buttons">
+                    {{> button text="Авторизоваться" }}
+                    {{> link class="form__buttons_link" text="Нет аккаунта?" href="../signup/signup.html"}}
+                </div>
+            </form>
+        </div>
+    </main>
+{{/main}}

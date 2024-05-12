@@ -1,0 +1,24 @@
+{{#> main title="Мессенджер" main_stylesheet="../../css/main.scss" page_stylesheet="chats.scss" }}
+    <main>
+        <div class="chats-page">
+            <div class="list">
+                <div class="list__header">
+                    <div class="list__header_link">
+                        {{> link text="Профиль" href="../settings/settings.html" }}
+                    </div>
+                    <form>
+                        <label>
+                            <input placeholder="Поиск" name="message">
+                        </label>
+                    </form>
+                </div>
+                <div class="list__body">
+                    <h3>Чатов нет</h3>
+                </div>
+            </div>
+            <div class="chat">
+                <h3>Выберите чат, чтобы отправить сообщение</h3>
+            </div>
+        </div>
+    </main>
+{{/main}}

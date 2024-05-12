@@ -1,0 +1,46 @@
+@import '../../css/colors';
+
+.chats-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .list {
+    width: 30%;
+    background-color: $bg-color-secondary;
+    padding: 16px;
+    border-right: 1px solid $border_color-primary;
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      width: 100%;
+
+      border-bottom: 1px solid $border_color-primary;
+
+      &_link {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+      }
+    }
+
+    &__body {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .chat {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

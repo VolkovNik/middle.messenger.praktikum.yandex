@@ -1,0 +1,22 @@
+{{#> main title="Регистрация" main_stylesheet="../../../css/main.scss" page_stylesheet="../authorization.scss" }}
+    <main>
+        <div class="authorization">
+            <h2 class="authorization__title">Регистрация</h2>
+            <form class="authorization__form">
+                <div class="form__inputs">
+                    {{> input id="authorization_input_mail" placeholder="Почта" name="email" }}
+                    {{> input id="authorization_input_login" placeholder="Логин" name="login" }}
+                    {{> input id="authorization_input_name" placeholder="Имя" name="first_name" }}
+                    {{> input id="authorization_input_surname" placeholder="Фамилия" name="second_name" }}
+                    {{> input id="authorization_input_number" placeholder="Телефон" name="password" }}
+                    {{> input id="authorization_input_password" placeholder="Пароль" name="password" }}
+                    {{> input id="authorization_input_password_repeat" placeholder="Пароль (еще раз)" name="password" }}
+                </div>
+                <div class="form__buttons">
+                    {{> button text="Зарегистрироваться" }}
+                    {{> link class="form__buttons_link" text="Войти" href="../login/login.html"}}
+                </div>
+            </form>
+        </div>
+    </main>
+{{/main}}

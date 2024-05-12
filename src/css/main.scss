@@ -1,0 +1,78 @@
+@import 'colors';
+@import 'typography';
+
+body {
+  @include text-primary();
+  margin: 0;
+}
+
+h1 {
+  @include headline-1();
+  margin: 0;
+}
+
+h2 {
+  @include headline-2();
+  margin: 0;
+}
+
+h3 {
+  @include headline-3();
+  margin: 0;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  padding: 6px 0;
+
+  @include text-primary();
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.link {
+  @include text-link();
+  text-decoration: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  @include text-primary();
+
+  background-color: $button-color-primary;
+  border: none;
+  border-radius: 8px;
+  color: $text-color-invert;
+  text-align: center;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include text-primary();
+
+  border: none;
+  color: $text-color-link;
+  text-align: center;
+  background-color: $bg-color-primary;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
