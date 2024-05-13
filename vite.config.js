@@ -13,7 +13,8 @@ export default defineConfig({
                 404: resolve(__dirname, 'src/pages/errors/404/404.html'),
                 error: resolve(__dirname, 'src/pages/errors/error/error.html'),
                 login: resolve(__dirname, 'src/pages/authorization/login/login.html'),
-                settings: resolve(__dirname, 'src/pages/settings/settings.html'),
+                settings: resolve(__dirname, 'src/pages/settings/settings/settings.html'),
+                update_settings: resolve(__dirname, 'src/pages/settings/update-settings/update-settings.html'),
                 signup: resolve(__dirname, 'src/pages/authorization/signup/signup.html'),
             }
         }

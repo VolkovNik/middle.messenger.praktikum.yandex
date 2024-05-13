@@ -79,6 +79,10 @@
     width: 60%;
     align-items: start;
 
+    &_save {
+      align-items: center;
+    }
+
     &_item {
       border-bottom: 1px solid #EAEAEA;
       padding-bottom: 4px;
