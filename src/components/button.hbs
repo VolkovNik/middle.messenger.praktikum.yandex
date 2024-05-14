@@ -1,1 +1,8 @@
-<button class="button">{{ text }}</button>
+<button
+        class="button"
+        {{#if type}}
+            type={{ type }}
+        {{/if}}
+>
+    {{ text }}
+</button>
