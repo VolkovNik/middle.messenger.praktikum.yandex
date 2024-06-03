@@ -1,0 +1,86 @@
+{{#> main title="Профиль" main_stylesheet="../../../css/main.scss" page_stylesheet="../settings.scss" }}
+    <main>
+        <div class="container">
+            <div class="container__return-back">
+                <a href="../../chats/chats.html">
+                    <img src="../../../assets/icon-back.svg" alt="icon-back" />
+                </a>
+            </div>
+            <div class="settings-page">
+                <div class="settings-page__title">
+                    <div class="title__avatar">
+                        <img src="../../../assets/avatar-empty.svg" alt="avatar-empty" />
+                    </div>
+                    <h3 class="title__name">Никита</h3>
+                </div>
+                <form class="settings-page__form">
+                    <div class="settings-page__content">
+                        <div class="settings-page__content_item">
+                            <div>
+                                Почта
+                            </div>
+                            <div>
+                                <label>
+                                    <input value="nikitavolkov1707@gmail.com" name="email">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="settings-page__content_item">
+                            <div>
+                                Логин
+                            </div>
+                            <div>
+                                <label>
+                                    <input value="HukumkaBanana" name="login">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="settings-page__content_item">
+                            <div>
+                                Имя
+                            </div>
+                            <div>
+                                <label>
+                                    <input value="Никита" name="first_name">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="settings-page__content_item">
+                            <div>
+                                Фамилия
+                            </div>
+                            <div>
+                                <label>
+                                    <input value="Волков" name="second_name">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="settings-page__content_item">
+                            <div>
+                                Имя в чате
+                            </div>
+                            <div>
+                                <label>
+                                    <input value="Никитос" name="display_name">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="settings-page__content_item">
+                            <div>
+                                Телефон
+                            </div>
+                            <div>
+                                <label>
+                                    <input value="+7 (999) 999 99 99" name="phone">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-page__footer settings-page__footer_save">
+                        {{> button type="submit" text="Сохранить" }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{{/main}}

@@ -1,0 +1,42 @@
+@import "colors";
+
+@mixin text-primary() {
+  font-family: Inter, serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 13px;
+  text-align: left;
+  color: $text-color-primary;
+}
+
+@mixin headline-1() {
+  font-family: Inter, serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  color: $text-color-primary;
+}
+
+@mixin headline-2() {
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  color: $text-color-primary;
+}
+
+@mixin headline-3() {
+  font-family: Inter, serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  color: $text-color-primary;
+}
+
+@mixin text-link() {
+  font-family: Inter, serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 11px;
+  color: $text-color-link;
+}
