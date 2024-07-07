@@ -24,7 +24,7 @@ const Pages: Record<string, Block> = {
   '/chats': new ChatsPage({}),
 };
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
   if (Pages[window.location.pathname]) {
     renderDOM('#app', Pages[window.location.pathname]);
   } else {
