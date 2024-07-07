@@ -24,7 +24,7 @@ export class ChatsPage extends Block {
       name: 'password',
     });
 
-    const sendForm = new SendForm();
+    const sendForm = new SendForm({});
 
     const button = new Button('div', {
       type: 'submit',
