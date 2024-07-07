@@ -34,6 +34,7 @@ export class SendForm extends Block {
               value: inputValue,
             });
 
+            // eslint-disable-next-line no-console
             console.log('input form result', { message: inputValue });
           }
         },

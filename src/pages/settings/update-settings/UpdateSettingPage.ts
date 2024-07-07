@@ -61,7 +61,8 @@ export class UpdateSettingsPage extends Block {
 
             formResult[inputName] = inputValue;
 
-            console.log(inputValue, inputName, input.getContent()?.querySelector('input'))
+            // eslint-disable-next-line no-console
+            console.log(inputValue, inputName, input.getContent()?.querySelector('input'));
 
             if (!validate(inputName, inputValue)) {
               input.setProps({
@@ -76,11 +77,11 @@ export class UpdateSettingsPage extends Block {
             }
           });
 
+          // eslint-disable-next-line no-console
           console.log('input form result', formResult);
         },
       },
     });
-
 
     super('main', {
       ...props,

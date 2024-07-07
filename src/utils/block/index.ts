@@ -109,6 +109,7 @@ export class Block {
   }
 
   componentDidUpdate(oldProps: BlockPropsAndChildrenType, newProps: BlockPropsAndChildrenType) {
+    // eslint-disable-next-line no-console
     console.log('componentDidUpdate', oldProps, newProps);
     return true;
   }

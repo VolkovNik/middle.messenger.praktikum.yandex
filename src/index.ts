@@ -12,7 +12,6 @@ import { SettingsPage } from '@/pages/settings/settings';
 import { UpdateSettingsPage } from '@/pages/settings/update-settings';
 import { ChatsPage } from '@/pages/chats';
 
-
 const Pages: Record<string, Block> = {
   '/login': new LoginPage({}),
   '/signup': new SignupPage({}),

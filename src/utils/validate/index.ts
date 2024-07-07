@@ -7,7 +7,6 @@ export enum INPUT_NAMES_ENUM {
   INPUT_SECOND_NAME = 'second_name',
 }
 
-
 export type InputValidatorMapValueType = {
   error: string,
   regex: RegExp

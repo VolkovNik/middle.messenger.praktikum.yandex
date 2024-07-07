@@ -16,4 +16,4 @@ export const template = `
             </ul>
         </nav>
     </main>
-`
+`;

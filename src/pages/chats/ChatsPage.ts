@@ -54,6 +54,7 @@ export class ChatsPage extends Block {
             }
           });
 
+          // eslint-disable-next-line no-console
           console.log('input form result', formResult);
         },
       },
