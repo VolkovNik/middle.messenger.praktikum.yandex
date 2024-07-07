@@ -1,8 +1,9 @@
-@import 'colors';
-@import 'typography';
+@import url('colors');
+@import url('typography');
 
 html, body {
   @include text-primary();
+
   margin: 0;
   height: 100%;
 }
@@ -18,16 +19,19 @@ main {
 
 h1 {
   @include headline-1();
+
   margin: 0;
 }
 
 h2 {
   @include headline-2();
+
   margin: 0;
 }
 
 h3 {
   @include headline-3();
+
   margin: 0;
 }
 
@@ -48,10 +52,12 @@ h3 {
   }
 }
 
-.chat_input {
+.chatinput {
   width: 100%;
   border: none;
+
   @include text-primary();
+
   padding: 16px;
   border-radius: 8px;
   background-color: $bg-color-secondary;
@@ -68,6 +74,7 @@ h3 {
 
 .link {
   @include text-link();
+
   text-decoration: none;
 }
 
@@ -91,7 +98,7 @@ h3 {
   }
 }
 
-.button_img {
+.buttonimg {
   border: none;
   background-color: $bg-color-primary;
 
