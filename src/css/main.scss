@@ -1,9 +1,19 @@
 @import 'colors';
 @import 'typography';
 
-body {
+html, body {
   @include text-primary();
   margin: 0;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -32,6 +42,28 @@ h3 {
   &:focus {
     outline: none;
   }
+
+  &_error {
+    color: $text-color-alert;
+  }
+}
+
+.chat_input {
+  width: 100%;
+  border: none;
+  @include text-primary();
+  padding: 16px;
+  border-radius: 8px;
+  background-color: $bg-color-secondary;
+
+  &:focus {
+    outline: none;
+  }
+
+  &_error {
+    color: $text-color-alert;
+  }
+
 }
 
 .link {
@@ -53,7 +85,16 @@ h3 {
   border-radius: 8px;
   color: $text-color-invert;
   text-align: center;
-  
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button_img {
+  border: none;
+  background-color: $bg-color-primary;
+
   &:hover {
     cursor: pointer;
   }
