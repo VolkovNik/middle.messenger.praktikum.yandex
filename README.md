@@ -30,6 +30,6 @@
 - «[Страница 404](https://funny-frangollo-71f4a6.netlify.app/pages/404)»,
 - «[Страница 5**](https://funny-frangollo-71f4a6.netlify.app/pages/error)»,
 - «[Страница настройки пользователя](https://funny-frangollo-71f4a6.netlify.app/settings)».
-- - «[Страница изменить настройки пользователя](https://funny-frangollo-71f4a6.netlify.app/update-settings)».
+- «[Страница изменить настройки пользователя](https://funny-frangollo-71f4a6.netlify.app/update-settings)».
 - «[Страница с чатами](https://funny-frangollo-71f4a6.netlify.app/chats)».
 

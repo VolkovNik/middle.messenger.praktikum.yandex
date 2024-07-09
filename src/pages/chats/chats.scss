@@ -1,4 +1,4 @@
-@import url('../../css/colors');
+@import '../../css/colors';
 
 .chats-page {
   height: 100%;
@@ -10,14 +10,14 @@
     width: 30%;
     background-color: $bg-color-secondary;
     padding: 16px;
-    border-right: 1px solid $border_color-primary;
+    border-right: 1px solid $border-color-primary;
 
     &__header {
       display: flex;
       flex-direction: column;
       gap: 8px;
       width: 100%;
-      border-bottom: 1px solid $border_color-primary;
+      border-bottom: 1px solid $border-color-primary;
 
       &_link {
         display: flex;
@@ -45,7 +45,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid $border_color-primary;
+      border-bottom: 1px solid $border-color-primary;
 
       &_user {
         display: flex;
@@ -64,7 +64,7 @@
     }
 
     &__footer {
-      border-top: 1px solid $border_color-primary;
+      border-top: 1px solid $border-color-primary;
       padding: 16px;
       display: flex;
       flex-direction: row;

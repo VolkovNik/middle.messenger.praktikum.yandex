@@ -1,8 +1,8 @@
-@import url('colors');
-@import url('typography');
+@import './colors';
+@import './typography';
 
 html, body {
-  @include text-primary();
+  @include text-primary;
 
   margin: 0;
   height: 100%;
@@ -18,19 +18,19 @@ main {
 }
 
 h1 {
-  @include headline-1();
+  @include headline-1;
 
   margin: 0;
 }
 
 h2 {
-  @include headline-2();
+  @include headline-2;
 
   margin: 0;
 }
 
 h3 {
-  @include headline-3();
+  @include headline-3;
 
   margin: 0;
 }
@@ -41,7 +41,7 @@ h3 {
   border-bottom: 1px solid $input-border-color;
   padding: 6px 0;
 
-  @include text-primary();
+  @include text-primary;
 
   &:focus {
     outline: none;
@@ -56,7 +56,7 @@ h3 {
   width: 100%;
   border: none;
 
-  @include text-primary();
+  @include text-primary;
 
   padding: 16px;
   border-radius: 8px;
@@ -73,7 +73,7 @@ h3 {
 }
 
 .link {
-  @include text-link();
+  @include text-link;
 
   text-decoration: none;
 }
@@ -85,7 +85,7 @@ h3 {
   padding-top: 12px;
   padding-bottom: 12px;
 
-  @include text-primary();
+  @include text-primary;
 
   background-color: $button-color-primary;
   border: none;
@@ -112,7 +112,7 @@ h3 {
   justify-content: center;
   align-items: center;
 
-  @include text-primary();
+  @include text-primary;
 
   border: none;
   color: $text-color-link;
