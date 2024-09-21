@@ -1,0 +1,1 @@
+export { UpdateSettingsPage } from './UpdateSettingPage';

@@ -1,23 +1,37 @@
-@import 'colors';
-@import 'typography';
+@import './colors';
+@import './typography';
 
-body {
-  @include text-primary();
+html, body {
+  @include text-primary;
+
   margin: 0;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
-  @include headline-1();
+  @include headline-1;
+
   margin: 0;
 }
 
 h2 {
-  @include headline-2();
+  @include headline-2;
+
   margin: 0;
 }
 
 h3 {
-  @include headline-3();
+  @include headline-3;
+
   margin: 0;
 }
 
@@ -27,15 +41,40 @@ h3 {
   border-bottom: 1px solid $input-border-color;
   padding: 6px 0;
 
-  @include text-primary();
+  @include text-primary;
 
   &:focus {
     outline: none;
   }
+
+  &_error {
+    color: $text-color-alert;
+  }
+}
+
+.chatinput {
+  width: 100%;
+  border: none;
+
+  @include text-primary;
+
+  padding: 16px;
+  border-radius: 8px;
+  background-color: $bg-color-secondary;
+
+  &:focus {
+    outline: none;
+  }
+
+  &_error {
+    color: $text-color-alert;
+  }
+
 }
 
 .link {
-  @include text-link();
+  @include text-link;
+
   text-decoration: none;
 }
 
@@ -46,14 +85,23 @@ h3 {
   padding-top: 12px;
   padding-bottom: 12px;
 
-  @include text-primary();
+  @include text-primary;
 
   background-color: $button-color-primary;
   border: none;
   border-radius: 8px;
   color: $text-color-invert;
   text-align: center;
-  
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.buttonimg {
+  border: none;
+  background-color: $bg-color-primary;
+
   &:hover {
     cursor: pointer;
   }
@@ -64,7 +112,7 @@ h3 {
   justify-content: center;
   align-items: center;
 
-  @include text-primary();
+  @include text-primary;
 
   border: none;
   color: $text-color-link;
