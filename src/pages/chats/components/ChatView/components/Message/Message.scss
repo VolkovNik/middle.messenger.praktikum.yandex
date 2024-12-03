@@ -1,0 +1,31 @@
+@import '../../../../../../css/colors';
+@import '../../../../../../css/typography';
+
+.message {
+  background-color: $bg-color-message;
+  padding: 16px;
+  border-radius: 8px 8px 8px 0;
+  position: relative;
+
+  &__container {
+    display: flex;
+    &_mine {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &_mine {
+    align-self: flex-end;
+    background-color: $bg-color-message-mine;
+    border-radius: 8px 8px 0 8px;
+  }
+
+  &_time {
+    @include text-small();
+    color: $text-color-secondary;
+    width: fit-content;
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+  }
+}

@@ -1,0 +1,66 @@
+@import '../../../../css/colors';
+@import '../../../../css/typography';
+
+.chat_item {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid $border-color-primary;
+  gap: 8px;
+
+  &:hover {
+    background-color: $bg-color-accent-hover;
+    cursor: pointer;
+  }
+
+  &__avatar {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    &_empty {
+      background-color: $bg-color-accent;
+      color: $text-color-invert;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  &__body {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    &_title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 800;
+    }
+    &_message {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &__info {
+    &_time {
+      @include text-small();
+      color: $text-color-secondary;
+      width: fit-content;
+      bottom: 4px;
+      right: 8px;
+    }
+  }
+}

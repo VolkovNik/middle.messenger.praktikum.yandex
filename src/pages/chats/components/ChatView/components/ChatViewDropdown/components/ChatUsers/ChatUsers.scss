@@ -1,0 +1,16 @@
+@import '../../../../../../../../css/colors';
+.chat_users {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+
+  &_error {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    color: $text-color-alert;
+  }
+}
+

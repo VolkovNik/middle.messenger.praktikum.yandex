@@ -1,22 +1,24 @@
 import { Block, BlockPropsAndChildrenType } from '@/utils/block';
 import { ButtonImg } from '@/components/ButtonImg';
 import { ChatInput } from '@/components/ChatInput';
+import { MessagesController } from '@/controllers/MessagesController';
+
+import sendIcon from '@/assets/send.svg';
 
 import { template } from './template';
-
 import './SendForm.scss';
 
 export class SendForm extends Block {
   constructor(props: BlockPropsAndChildrenType) {
-    const input = new ChatInput('div', {
+    const input = new ChatInput({
       id: 'message_send',
       name: 'message',
       placeholder: 'Сообщение',
     });
 
-    const button = new ButtonImg('div', {
+    const button = new ButtonImg({
       alt: 'send',
-      src: '../../assets/send.svg',
+      src: sendIcon,
       events: {
         click: (event) => {
           event.preventDefault();
@@ -31,17 +33,16 @@ export class SendForm extends Block {
           } else {
             input.setProps({
               error: '',
-              value: inputValue,
+              value: '',
             });
 
-            // eslint-disable-next-line no-console
-            console.log('input form result', { message: inputValue });
+            MessagesController.sendMessage(inputValue);
           }
         },
       },
     });
 
-    super('main', {
+    super({
       ...props,
       button,
       input,

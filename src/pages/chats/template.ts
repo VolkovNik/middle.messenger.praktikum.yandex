@@ -1,41 +1,31 @@
 export const template = `
-<div class="chats-page">
+<main class="chats-page">
+{{{ createChatModal }}}
             <div class="list">
                 <div class="list__header">
                     <div class="list__header_link">
                         {{{ link }}}
                     </div>
-                    <form>
-                        <label>
-                            <input placeholder="Поиск" name="message">
-                        </label>
-                    </form>
+                    {{{ createChatButton }}}
                 </div>
                 <div class="list__body">
-                    <h3>Чатов нет</h3>
+                    {{#if chatItems}}
+                        {{{ chatItems }}}
+                    {{else }}
+                        <div class="list__body_empty">
+                            <h3>Чатов нет</h3>
+                        </div>
+                    {{/if}}
                 </div>
             </div>
-            <div class="chat">
-                <div class="chat__header">
-                    <div class="chat__header_user">
-                        <div>
-                            <img alt="avatar" src="../../assets/avatar.svg"/>
+            <div class="chats-page__chat_container">
+                {{#if currentChat}}
+                        {{{ chatView }}}
+                    {{else }}
+                        <div class="list__body_empty">
+                            <h3>Выберите чат</h3>
                         </div>
-                        <div>
-                            Эля
-                        </div>
-                    </div>
-                  <div>
-                      <img alt="more icon" src="../../assets/more.svg" />
-                  </div>
-                </div>
-                <div class="chat__body"><h3>Сообщений нет</h3></div>
-                <div class="chat__footer">
-                    <div>
-                        <img alt="attach icon" src="../../assets/attacg.svg" />
-                    </div>   
-                    {{{ sendForm }}}
-                </div>
+                    {{/if}}
             </div>
-        </div>
+        </main>
 `;

@@ -5,11 +5,16 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+
+  &__chat_container {
+    width: 100%;
+    height: 100%;
+  }
 
   .list {
-    width: 30%;
+    width: 40%;
     background-color: $bg-color-secondary;
-    padding: 16px;
     border-right: 1px solid $border-color-primary;
 
     &__header {
@@ -18,57 +23,33 @@
       gap: 8px;
       width: 100%;
       border-bottom: 1px solid $border-color-primary;
+      padding: 8px;
+      box-sizing: border-box;
 
       &_link {
         display: flex;
         justify-content: end;
         width: 100%;
+        margin-bottom: 16px;
+        margin-top: 16px;
       }
     }
 
     &__body {
       height: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
-    }
-  }
+      flex-direction: column;
 
-  .chat {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    &__header {
-      padding: 16px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid $border-color-primary;
-
-      &_user {
+      &_empty {
+        height: 100%;
+        width: 100%;
         display: flex;
-        flex-direction: row;
+        justify-content: center;
         align-items: center;
-        gap: 12px
+        flex-direction: column;
       }
-    }
-
-    &__body {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &__footer {
-      border-top: 1px solid $border-color-primary;
-      padding: 16px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
     }
   }
 }

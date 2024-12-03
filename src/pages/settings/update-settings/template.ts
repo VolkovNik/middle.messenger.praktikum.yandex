@@ -1,17 +1,9 @@
 export const template = `
- <div class="container">
+ <main class="container">
             <div class="container__return-back">
-                <a href="/chats">
-                    <img src="../../../assets/icon-back.svg" alt="icon-back" />
-                </a>
+                {{{ returnButton }}}
             </div>
             <div class="settings-page">
-                <div class="settings-page__title">
-                    <div class="title__avatar">
-                        <img src="../../../assets/avatar-empty.svg" alt="avatar-empty" />
-                    </div>
-                    <h3 class="title__name">Никита</h3>
-                </div>
                 <form class="settings-page__form">
                     <div class="settings-page__content">
                         <div class="settings-page__content_item">
@@ -48,6 +40,14 @@ export const template = `
                         </div>
                         <div class="settings-page__content_item">
                             <div>
+                                Имя в чате
+                            </div>
+                            <div>
+                                {{{ displayNameInput }}}
+                            </div>
+                        </div>
+                        <div class="settings-page__content_item">
+                            <div>
                                 Телефон
                             </div>
                             <div>
@@ -58,7 +58,10 @@ export const template = `
                     <div class="settings-page__footer settings-page__footer_save">
                         {{{ saveChangesButton }}}
                     </div>
+                    {{#if error}}
+                        <div class="settings-page__footer_error">{{ error }}</div>
+                    {{/if}}
                 </form>
             </div>
-        </div>
+        </main>
 `;

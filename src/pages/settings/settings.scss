@@ -27,21 +27,6 @@
 
 
   &__title {
-    .title__avatar {
-      width: 130px;
-      height: 130px;
-      background-color: $bg-color-grey;
-      border-radius: 65px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &_icon {
-        width: 40px;
-        height: 40px;
-      }
-    }
-
     .title__name {
       text-align: center;
       margin-top: 20px;
@@ -83,6 +68,12 @@
     gap: 16px;
     width: 40%;
     align-items: start;
+
+    &_error {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      color: $text-color-alert;
+    }
 
     &_save {
       align-items: center;

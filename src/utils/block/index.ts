@@ -2,6 +2,8 @@ import { v4 as makeUUID } from 'uuid';
 import Handlebars from 'handlebars';
 
 import { Nullable } from '@/types';
+import { isEqual } from '@/utils/isEqual';
+
 import { EventBus } from '../eventBus';
 
 type EventsType = Record<string, (event: Event) => void>
@@ -10,7 +12,7 @@ type EventsType = Record<string, (event: Event) => void>
 type BlockChildrenType = Record<string, Block>;
 // eslint-disable-next-line no-use-before-define
 type BlockListType = Record<string, Array<Block>>
-type BlockPropsType = {
+export type BlockPropsType = {
   [key: string]: unknown;
   events?: EventsType;
 };
@@ -46,10 +48,10 @@ export class Block {
 
   _setUpdate = false;
 
-  constructor(tagName = 'div', propsAndChildren: BlockPropsType = {}) {
+  constructor(propsAndChildren: BlockPropsType = {}) {
     const eventBus = new EventBus();
     this._meta = {
-      tagName,
+      tagName: 'div',
       propsAndChildren,
     };
 
@@ -108,10 +110,8 @@ export class Block {
     }
   }
 
-  componentDidUpdate(oldProps: BlockPropsAndChildrenType, newProps: BlockPropsAndChildrenType) {
-    // eslint-disable-next-line no-console
-    console.log('componentDidUpdate', oldProps, newProps);
-    return true;
+  componentDidUpdate(oldProps: BlockPropsType, newProps: BlockPropsType) {
+    return !isEqual(oldProps, newProps);
   }
 
   get element() {
@@ -143,6 +143,7 @@ export class Block {
   }
 
   compile(template: string, props: BlockPropsType) {
+    this.props.events = { ...this.props.events, ...props.events };
     const propsAndStubs = { ...props, ...this.props };
 
     Object.entries(this.children).forEach(([key, child]) => {
@@ -194,11 +195,13 @@ export class Block {
     }
 
     const block = this.render() as unknown as DocumentFragment;
+
     this._removeEvents();
-    this._element.innerHTML = '';
-
-    this._element.appendChild(block);
-
+    const newElement = block.firstElementChild as HTMLElement;
+    if (this._element && newElement) {
+      this._element.replaceWith(newElement);
+    }
+    this._element = newElement;
     this._addEvents();
   }
 
@@ -268,7 +271,7 @@ export class Block {
 
       if (prop instanceof Block) {
         children[key] = prop;
-      } else if (Array.isArray(prop)) {
+      } else if (Array.isArray(prop) && prop[0] instanceof Block) {
         list[key] = prop;
       } else {
         props[key] = prop;
@@ -284,5 +287,17 @@ export class Block {
       element.setAttribute('data-id', this._id);
     }
     return element;
+  }
+
+  show() {
+    if (this._element) {
+      this._element.style.display = 'block';
+    }
+  }
+
+  hide() {
+    if (this._element) {
+      this._element.style.display = 'none';
+    }
   }
 }
