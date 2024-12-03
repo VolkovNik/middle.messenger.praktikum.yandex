@@ -79,6 +79,8 @@ export class HTTPTransport {
           reject(xhr.responseText);
           if (xhr.status === 401 && url !== '/signin' && url !== '/signup') {
             router.go('/');
+          } else if (xhr.responseText === '{"reason":"User already in system"}') {
+            router.go('/messenger');
           }
         }
         if (xhr.response === 'OK') {
