@@ -9,6 +9,7 @@
 
   &__container {
     display: flex;
+
     &_mine {
       flex-direction: row-reverse;
     }
@@ -17,11 +18,12 @@
   &_mine {
     align-self: flex-end;
     background-color: $bg-color-message-mine;
-    border-radius: 8px 8px 0 8px;
+    border-radius: 8px 8px 0;
   }
 
   &_time {
-    @include text-small();
+    @include text-small;
+
     color: $text-color-secondary;
     width: fit-content;
     position: absolute;

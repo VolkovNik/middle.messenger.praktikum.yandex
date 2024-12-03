@@ -159,7 +159,7 @@ h3 {
     padding: 40px 30px;
 
     .modal__title {
-      @include headline-3();
+      @include headline-3;
     }
   }
 }

@@ -7,10 +7,6 @@
   width: 32px;
   height: 32px;
 
-  &:hover .dropdown__menu {
-    display: flex;
-  }
-
   &__icon {
     display: flex;
     justify-content: center;
@@ -24,7 +20,7 @@
     right: 0;
     margin-top: 8px;
     background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0 0 0 / 10%);
     border-radius: 8px;
     display: none;
     flex-direction: column;
@@ -32,4 +28,8 @@
     width: 200px;
     z-index: 10;
   }
+}
+
+.dropdown:hover .dropdown__menu {
+  display: flex;
 }

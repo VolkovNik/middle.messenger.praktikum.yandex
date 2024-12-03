@@ -20,6 +20,7 @@
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
+
     &_empty {
       background-color: $bg-color-accent;
       color: $text-color-invert;
@@ -47,6 +48,7 @@
       white-space: nowrap;
       font-weight: 800;
     }
+
     &_message {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -56,7 +58,8 @@
 
   &__info {
     &_time {
-      @include text-small();
+      @include text-small;
+
       color: $text-color-secondary;
       width: fit-content;
       bottom: 4px;

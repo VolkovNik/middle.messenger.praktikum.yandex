@@ -1,9 +1,10 @@
-@import '../../css/colors.scss';
+@import '../../css/colors';
 
 .chat_input {
   &_container {
     width: 100%;
   }
+
   flex-grow: 1;
   border: none;
   outline: none;
