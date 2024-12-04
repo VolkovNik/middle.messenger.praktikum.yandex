@@ -3,6 +3,8 @@ import { Modal } from '@/components/Modal';
 
 import moreIcon from '@/assets/more.svg';
 
+import { UserType } from '@/types/store';
+import { ChatsController } from '@/controllers/ChatsController';
 import { ChatViewDropdownItem } from './components/ChatViewDropdownItem';
 import { AddUserToChat } from './components/AddUserToChat';
 import { DeleteUserFromChat } from './components/DeleteUserFromChat';
@@ -62,9 +64,10 @@ export class ChatViewDropdown extends Block {
       },
     });
 
+    const chatUsersModalContent = new ChatUsers({});
     const chatUsersModal = new Modal({
       title: 'В данном чате присутствуют',
-      children: new ChatUsers({}),
+      children: chatUsersModalContent,
     });
 
     const chatUsersDropdownItem = new ChatViewDropdownItem({
@@ -75,6 +78,18 @@ export class ChatViewDropdown extends Block {
           event.preventDefault();
           chatUsersModal.setProps({
             isOpen: true,
+          });
+          ChatsController.getChatUsers().then((data) => {
+            const chatUsers = (data as Array<UserType>)
+              .map((user) => user.login)
+              .join(', ');
+            chatUsersModalContent.setProps({
+              chatUsers,
+            });
+          }).catch(() => {
+            chatUsersModalContent.setProps({
+              error: 'Не удалось получить список пользователй',
+            });
           });
         },
       },

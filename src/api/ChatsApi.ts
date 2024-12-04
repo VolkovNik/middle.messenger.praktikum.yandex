@@ -54,7 +54,7 @@ export class ChatsApi {
   }
 
   async deleteUserFromChat(data: deleteUserFromChatRequestDataType) {
-    return this._chatsApiInstance.put('/users', {
+    return this._chatsApiInstance.delete('/users', {
       headers: {
         'Content-Type': 'application/json',
       },
