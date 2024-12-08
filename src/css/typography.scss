@@ -33,6 +33,13 @@
   color: $text-color-primary;
 }
 
+@mixin text-small {
+  font-family: Inter, serif;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 9px;
+}
+
 @mixin text-link {
   font-family: Inter, serif;
   font-size: 11px;

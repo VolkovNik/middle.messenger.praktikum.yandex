@@ -1,81 +1,121 @@
-import { Block, BlockPropsAndChildrenType } from '@/utils/block';
-
-import { Input } from '@/components/Input';
-import { Button } from '@/components/Button';
+import { Block, BlockPropsType } from '@/utils/block';
+import { connect } from '@/utils/connect';
 import { Link } from '@/components/Link';
-import { INPUT_NAMES_ENUM, INPUT_VALIDATOR_MAP, validate } from '@/utils/validate';
-import { SendForm } from '@/pages/chats/components/SendForm';
+import { Modal } from '@/components/Modal';
+import { Button } from '@/components/Button';
+import { ChatsController } from '@/controllers/ChatsController';
+import { AuthController } from '@/controllers/AuthController';
+import { ChatType } from '@/types/store';
+import { isEqual } from '@/utils/isEqual';
+import { router } from '@/utils/router';
+
+import { ChatListItem } from './components/ChatListItem';
+import { ChatView } from './components/ChatView';
+import { CreateChat } from './components/CreateChat';
 
 import { template } from './template';
 
 import './chats.scss';
 
-export class ChatsPage extends Block {
-  constructor(props: BlockPropsAndChildrenType) {
-    const loginInput = new Input('div', {
-      id: 'authorization_input_login',
-      placeholder: 'Логин',
-      name: 'login',
-    });
+class ChatsPageContainer extends Block {
+  constructor(props: BlockPropsType) {
+    ChatsController.getChats();
 
-    const passwordInput = new Input('div', {
-      id: 'authorization_input_password',
-      placeholder: 'Пароль',
-      name: 'password',
-    });
-
-    const sendForm = new SendForm({});
-
-    const button = new Button('div', {
-      type: 'submit',
-      text: 'Авторизоваться',
+    const link = new Link({
+      text: 'Профиль',
       events: {
-        click: (event) => {
+        click: (event: Event) => {
           event.preventDefault();
-
-          const pageInputs = [loginInput, passwordInput];
-          const formResult: Record<string, string> = {};
-          pageInputs.forEach((input) => {
-            const inputValue = input.getContent()?.querySelector('input')?.value || '';
-            const inputName = input.getContent()?.querySelector('input')?.name! as INPUT_NAMES_ENUM;
-
-            formResult[inputName] = inputValue;
-
-            if (!validate(inputName, inputValue)) {
-              input.setProps({
-                error: INPUT_VALIDATOR_MAP[inputName].error,
-                value: inputValue,
-              });
-            } else {
-              input.setProps({
-                error: '',
-                value: inputValue,
-              });
-            }
-          });
-
-          // eslint-disable-next-line no-console
-          console.log('input form result', formResult);
+          router.go('/settings');
         },
       },
     });
 
-    const link = new Link('div', {
-      text: 'Профиль',
-      href: '/settings',
+    const createChatModal = new Modal({
+      title: 'Создать чат',
+      children: new CreateChat({
+        onSuccess: () => {
+          createChatModal.setProps({
+            isOpen: false,
+          });
+        },
+      }),
     });
 
-    super('main', {
-      ...props,
-      loginInput,
-      passwordInput,
-      button,
-      link,
-      sendForm,
+    const createChatButton = new Button({
+      text: 'Создать чат',
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          createChatModal.setProps({
+            isOpen: true,
+          });
+        },
+      },
     });
+
+    super({
+      ...props,
+      link,
+      createChatButton,
+      createChatModal,
+    });
+  }
+
+  componentDidUpdate(oldProps: BlockPropsType, newProps: BlockPropsType): boolean {
+    if (!isEqual(oldProps.chats as Array<ChatType>, newProps.chats as Array<ChatType>)) {
+      const chatItems = (newProps.chats as Array<ChatType>).map((item) => new ChatListItem({
+        ...item,
+        events: {
+          click: (event: Event) => {
+            event.preventDefault();
+            AuthController.getUserInfo().then(() => {
+              ChatsController.selectCurrentChat(item);
+            });
+          },
+        },
+      }));
+      this.setProps({ chatItems });
+    }
+
+    if (!isEqual(oldProps.currentChat as ChatType, newProps.currentChat as ChatType)) {
+      const chatView = new ChatView({ chat: newProps.currentChat as ChatType });
+      this.setProps({ chatView });
+    }
+
+    return super.componentDidUpdate(oldProps, newProps);
+  }
+
+  componentDidMount() {
+    if (this.props.chats) {
+      const chatItems = (this.props.chats as Array<ChatType>).map((item) => new ChatListItem({
+        ...item,
+        events: {
+          click: (event: Event) => {
+            event.preventDefault();
+            AuthController.getUserInfo().then(() => {
+              ChatsController.selectCurrentChat(item);
+            });
+          },
+        },
+      }));
+      this.setProps({ chatItems });
+    }
+
+    if (this.props.currentChat) {
+      const chatView = new ChatView({ chat: this.props.currentChat as ChatType });
+      this.setProps({ chatView });
+    }
+
+    super.componentDidMount();
   }
 
   render() {
     return this.compile(template, {});
   }
 }
+
+export const ChatsPage = connect((state) => ({
+  chats: state.chats || [],
+  currentChat: state.currentChat,
+}))(ChatsPageContainer);

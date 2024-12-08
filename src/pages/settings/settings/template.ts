@@ -1,16 +1,14 @@
 export const template = `
-<div class="container">
+<main class="container">
+            {{{ changePasswordModal }}}
+            {{{ changeAvatarModal }}}
             <div class="container__return-back">
-                <a href="/chats">
-                    <img src="../../../assets/icon-back.svg" alt="icon-back" />
-                </a>
+                {{{ returnButton }}}
             </div>
             <div class="settings-page">
                 <div class="settings-page__title">
-                    <div class="title__avatar">
-                        <img src="../../../assets/avatar-empty.svg" alt="avatar-empty" />
-                    </div>
-                    <h3 class="title__name">Никита</h3>
+                    {{{ avatar }}}
+                    <h3 class="title__name">{{{ first_name }}}</h3>
                 </div>
                 <div class="settings-page__content">
                     <div class="settings-page__content_item">
@@ -18,7 +16,7 @@ export const template = `
                             Почта
                         </div>
                         <div>
-                            nikitavolkov1707@gmail.com
+                            {{{ email }}}
                         </div>
                     </div>
                     <div class="settings-page__content_item">
@@ -26,7 +24,7 @@ export const template = `
                             Логин
                         </div>
                         <div>
-                            HukumkaBanana
+                            {{{ login }}}
                         </div>
                     </div>
                     <div class="settings-page__content_item">
@@ -34,7 +32,7 @@ export const template = `
                             Имя
                         </div>
                         <div>
-                            Никита
+                           {{{ first_name }}}
                         </div>
                     </div>
                     <div class="settings-page__content_item">
@@ -42,7 +40,7 @@ export const template = `
                             Фамилия
                         </div>
                         <div>
-                            Волков
+                            {{{ second_name }}}
                         </div>
                     </div>
                     <div class="settings-page__content_item">
@@ -50,7 +48,7 @@ export const template = `
                             Имя в чате
                         </div>
                         <div>
-                            Никитос
+                            {{{ display_name }}}
                         </div>
                     </div>
                     <div class="settings-page__content_item">
@@ -58,7 +56,7 @@ export const template = `
                             Телефон
                         </div>
                         <div>
-                            +7 (999) 999 99 99
+                            {{{ phone }}}
                         </div>
                     </div>
                 </div>
@@ -75,5 +73,5 @@ export const template = `
 
                 </div>
             </div>
-        </div>
+        </m>
 `;

@@ -1,0 +1,17 @@
+@import '../../../../../css/colors';
+
+.change_avatar {
+  background: $bg-color-primary;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 108px;
+  margin-top: 52px;
+
+  &_error {
+    color: $text-color-alert;
+    margin-top: 12px;
+    text-align: center;
+  }
+}

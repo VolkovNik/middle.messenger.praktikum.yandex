@@ -5,6 +5,7 @@ export enum INPUT_NAMES_ENUM {
   INPUT_PHONE = 'phone',
   INPUT_FIRST_NAME = 'first_name',
   INPUT_SECOND_NAME = 'second_name',
+  INPUT_DISPLAY_NAME = 'display_name',
 }
 
 export type InputValidatorMapValueType = {
@@ -34,6 +35,11 @@ export const INPUT_VALIDATOR_MAP: InputValidatorMapType = {
   },
   [INPUT_NAMES_ENUM.INPUT_FIRST_NAME]: {
     error: 'Имя - латиница или кириллица, первая буква должна быть заглавной,'
+      + ' без пробелов и без цифр, нет спецсимволов (допустим только дефис)',
+    regex: /^[А-ЯA-Z][а-яa-z]*-?[А-ЯA-Z]?[а-яa-z]*$/,
+  },
+  [INPUT_NAMES_ENUM.INPUT_DISPLAY_NAME]: {
+    error: 'Имя в чате - латиница или кириллица, первая буква должна быть заглавной,'
       + ' без пробелов и без цифр, нет спецсимволов (допустим только дефис)',
     regex: /^[А-ЯA-Z][а-яa-z]*-?[А-ЯA-Z]?[а-яa-z]*$/,
   },

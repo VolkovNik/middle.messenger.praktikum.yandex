@@ -8,6 +8,7 @@ export const renderDOM = (query: string, block: Block): Nullable<Element> => {
     return root;
   }
 
+  root.innerHTML = '';
   root.appendChild(block.getContent() as HTMLElement);
 
   block.dispatchComponentDidMount();
