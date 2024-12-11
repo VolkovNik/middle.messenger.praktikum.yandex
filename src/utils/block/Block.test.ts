@@ -31,7 +31,7 @@ describe('Block', () => {
   it('should call initEvenBus when init', () => {
     const eventBusSpy = sandbox.spy(EventBus.prototype, 'emit');
 
-    const blockInstance = new TestBlock({ text: 'text' });
+    new TestBlock({ text: 'text' });
 
     expect(eventBusSpy.calledWith(Block.EVENTS.INIT)).to.be.true;
   });
@@ -39,7 +39,7 @@ describe('Block', () => {
   it('should register event init when init', () => {
     const eventBusSpy = sandbox.spy(EventBus.prototype, 'on');
 
-    const blockInstance = new TestBlock({ text: 'text' });
+    new TestBlock({ text: 'text' });
 
     expect(eventBusSpy.calledWith(Block.EVENTS.INIT)).to.be.true;
   });
@@ -47,7 +47,7 @@ describe('Block', () => {
   it('should register event cdu when init', () => {
     const eventBusSpy = sandbox.spy(EventBus.prototype, 'on');
 
-    const blockInstance = new TestBlock({ text: 'text' });
+    new TestBlock({ text: 'text' });
 
     expect(eventBusSpy.calledWith(Block.EVENTS.FLOW_CDU)).to.be.true;
   });
@@ -55,7 +55,7 @@ describe('Block', () => {
   it('should register event cdm when init', () => {
     const eventBusSpy = sandbox.spy(EventBus.prototype, 'on');
 
-    const blockInstance = new TestBlock({ text: 'text' });
+    new TestBlock({ text: 'text' });
 
     expect(eventBusSpy.calledWith(Block.EVENTS.FLOW_CDM)).to.be.true;
   });
@@ -63,7 +63,7 @@ describe('Block', () => {
   it('should register event render when init', () => {
     const eventBusSpy = sandbox.spy(EventBus.prototype, 'on');
 
-    const blockInstance = new TestBlock({ text: 'text' });
+    new TestBlock({ text: 'text' });
 
     expect(eventBusSpy.calledWith(Block.EVENTS.FLOW_RENDER)).to.be.true;
   });
@@ -71,7 +71,7 @@ describe('Block', () => {
   it('should call render when init', () => {
     const renderSpy = sandbox.spy(TestBlock.prototype, 'render');
 
-    const blockInstance = new TestBlock({ text: 'text' });
+    new TestBlock({ text: 'text' });
 
     expect(renderSpy.calledOnce).to.be.true;
   });

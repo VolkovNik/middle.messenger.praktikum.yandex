@@ -30,7 +30,7 @@ describe('Router', () => {
     });
 
     it('should support chain of routes', () => {
-      const result = router
+      router
         .use('/test1', mockBlock)
         .use('/test2', mockBlock);
 
