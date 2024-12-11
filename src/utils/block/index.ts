@@ -2,7 +2,7 @@ import { v4 as makeUUID } from 'uuid';
 import Handlebars from 'handlebars';
 
 import { Nullable } from '@/types';
-import { isEqual } from '@/utils/isEqual';
+import { isEqual } from '../isEqual';
 
 import { EventBus } from '../eventBus';
 

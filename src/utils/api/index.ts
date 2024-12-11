@@ -1,5 +1,5 @@
-import { CHAT_BASE_API_URL } from '@/constants';
-import { router } from '@/utils/router';
+import { CHAT_BASE_API_URL } from '../../constants';
+import { router } from '../router';
 
 enum METHODS {
   GET = 'GET',
