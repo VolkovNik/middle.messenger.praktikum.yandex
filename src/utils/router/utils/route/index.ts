@@ -1,5 +1,5 @@
-import { renderDOM } from '@/utils/renderDOM';
-import { Block, BlockPropsType } from '@/utils/block';
+import { renderDOM } from '../../../renderDOM';
+import { Block, BlockPropsType } from '../../../block';
 
 export class Route {
   private _pathname: string;

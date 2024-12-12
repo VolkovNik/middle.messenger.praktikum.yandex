@@ -1,9 +1,9 @@
-import { Block } from '@/utils/block';
-import { Nullable } from '@/types';
+import { Block } from '../block';
+import { Nullable } from '../../types';
 
 import { Route } from './utils/route';
 
-class Router {
+export class Router {
   routes: Route[] = [];
 
   history = window.history;
